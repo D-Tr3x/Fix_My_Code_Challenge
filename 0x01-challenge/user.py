@@ -1,28 +1,29 @@
 #!/usr/bin/python3
-""" 
-User class
+"""
+Module defines a User class
 """
 
-class User():
-    """ Documentation """
 
-    def __init__(self):
-        """ Documentation """
-        self.__email = None
+class User:
+    """ Represents a user using email """
+
+    def __init__(self, email=""):
+        """ Initializes the user's email """
+        self.__email = email
+
+    @property
+    def email(self):
+        """ Getter for email """
+        return self.__email
 
     @email.setter
     def email(self, value):
-        """ Documentation """
+        """ Setter for email """
         if type(value) is not str:
             raise TypeError("email must be a string")
         self.__email = value
 
-    @property
-    def email(self):
-        """ Documentation """
-        return self.__email
-   
-    
+
 if __name__ == "__main__":
 
     u = User()
